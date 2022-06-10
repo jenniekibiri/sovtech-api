@@ -28,7 +28,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                     sh 'docker build -t jennykibiri/sovtech-api .'
                     sh "echo $PASS | docker login -u $USER --password-stdin"
-                    sh 'docker push jennykibiri/freestyle-jenkins-node-app'
+                    sh 'docker push  jennykibiri/sovtech-api'
                 }
             }
         }

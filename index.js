@@ -11,5 +11,5 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 
-const port = process.env.PORT || 4000;
+const port = 5000;
 app.listen(port, console.log(`server running on port ${port}`));

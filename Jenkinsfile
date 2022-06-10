@@ -35,7 +35,7 @@ pipeline {
         stage ('Deploy') {
             steps {
                 script {
-                    def dockerCmd = 'docker run  -p 5000:5000 -d jennykibiri/sovtech-api:latest'
+                    def dockerCmd = 'docker run  -p 4000:4000 -d jennykibiri/sovtech-api:latest'
                     sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@3.92.144.96 ${dockerCmd}"
                     }
